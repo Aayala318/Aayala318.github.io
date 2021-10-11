@@ -2,18 +2,18 @@
 
 ---
 
-### Jr. Full-Stack Python Engineer 
+### Jr. Full-Stack Python Developer 
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Favorite Books](/sample_page)
+<img src="images/Favorite_Books_Screenshot.png"/>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Bright Ideas](/pdf/sample_presentation.pdf)
+<img src="images/Bright_Ideas_Screenshot.png"/>
+
+---
+[Ninja Gold](http://example.com/)
+<img src="images/Ninja_Gold_Screenshot.png"/>
 
 ---
 
