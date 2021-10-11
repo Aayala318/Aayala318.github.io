@@ -5,7 +5,7 @@
 ### Jr. Full-Stack Python Developer 
 
 [Favorite Books](/sample_page)
-<img src="images/Favorite_Books_Screenshot.png"/>
+<img style="width: 200px; height: 200px;" src="images/Favorite_Books_Screenshot.png"/>
 
 ---
 [Bright Ideas](/pdf/sample_presentation.pdf)
