@@ -17,7 +17,7 @@
 
 ---
 
-### Category Name 2
+### Projects
 
 - [Quotable Quotes](https://github.com/Aayala318/Quotable_Quotes.git)
 - [Modernize](https://github.com/Aayala318/Modernize.git)
