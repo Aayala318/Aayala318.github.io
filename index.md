@@ -19,11 +19,11 @@
 
 ### Category Name 2
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [Quotable Quotes](https://github.com/Aayala318/Quotable_Quotes.git)
+- [Modernize](https://github.com/Aayala318/Modernize.git)
+- [Favorite Books](https://github.com/Aayala318/Favorite_Books.git)
+- [Bright Ideas](https://github.com/Aayala318/Bright_Ideas.git)
+- [Ninja Gold](https://github.com/Aayala318/Ninja_Gold.git)
 
 ---
 
