@@ -4,15 +4,15 @@
 
 ### Jr. Full-Stack Python Developer 
 
-[Favorite Books](/sample_page)
+[Favorite Books](/favoriteBooks_page)
 <img src="images/Favorite_Books_Screenshot.png"/>
 
 ---
-[Bright Ideas](/pdf/sample_presentation.pdf)
+[Bright Ideas](/brightIdeas_page)
 <img src="images/Bright_Ideas_Screenshot.png"/>
 
 ---
-[Ninja Gold](http://example.com/)
+[Ninja Gold](/ninjaGold_page)
 <img src="images/Ninja_Gold_Screenshot.png"/>
 
 ---
