@@ -1,6 +1,6 @@
-## This can be your internal website page / project page
+## Favorite Books
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Description:** This project was mainly focused on creating and experimenting with the navbar. This was one of my early attempts in creating a navber, it does not have much functionality but does have a logout button within it. The project allows users to add book titles along with the author, they can also favorite and unfavorite books. When a user adds a book, that book will automatically be added to their favorited list and be displayed on their main page. Books that are not favorited by the current user with be in a "Other Books" list.
 
 ### 1. Suggest hypotheses about the causes of observed phenomena
 
