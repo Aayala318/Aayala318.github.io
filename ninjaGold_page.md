@@ -1,32 +1,47 @@
 
-## This can be your internal website page / project page
+## Ninja Gold
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Project description:** This project was one of the first mini games that I created while attending Coding Dojo. It allows the user to earn gold by visiting a Farm, Cave, House, or Casino. Each location gives a different amount of gold and adds that amount to the users total. The locations also all have a unique range of gold that could be earned. Users can actually lose gold or win big if they decide to pick the Casino.
 
-### 1. Suggest hypotheses about the causes of observed phenomena
+### Logic used to create game.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-
-```javascript
-if (isAwesome){
-  return true
+```python
+GOLD_MAP = {
+    "farm": (10,20),
+    "cave": (5,10),
+    "house": (2,5),
+    "casino": (0,50)
 }
+
+def index(request):
+    if not "gold" in request.session or "activities" not in request.session:
+        request.session['gold'] = 0
+        request.session['activities'] = []
+    return render(request, 'index.html')
+
+def reset(request):
+    request.session.clear()
+    return redirect('/')
+
+def process_gold(request):
+    if request.method == 'GET':
+        return redirect('/')
+    building_name = request.POST['building']
+    building = GOLD_MAP[building_name]
+    building_name_upper = building_name[0].upper() + building_name[1:] 
+    curr_gold = random.randint(building[0], building[1])
+    now_formatted = datetime.now().strftime("%m/%d/%Y %I:%M%p")
+    result = 'earn'
+    message = f"Earned {curr_gold} from the {building_name_upper}! ({now_formatted})"
+
+    if building_name == 'casino':
+        if random.randint(0,1) > 0:
+            message = f"Entered a {building_name_upper} and lost {curr_gold} golds... Ouch... ({now_formatted})"
+            curr_gold = curr_gold * -1
+            result = 'lose'
+    request.session['gold'] += curr_gold
+    request.session['activities'].append({"message": message, "result": result})
+    return redirect('/')
 ```
-
-### 2. Assess assumptions on which statistical inference will be based
-
-```javascript
-if (isAwesome){
-  return true
-}
-```
-
-### 3. Support the selection of appropriate statistical tools and techniques
-
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
-### 4. Provide a basis for further data collection through surveys or experiments
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
