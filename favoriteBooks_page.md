@@ -4,8 +4,6 @@
 
 ### 1. My code for creating and styling the navbar.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-
 ```html
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
