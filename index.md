@@ -2,7 +2,7 @@
 
 ---
 
-### Jr. Full-Stack Python Developer 
+### Jr. Python Developer 
 
 [Favorite Books](/favoriteBooks_page)
 <img src="images/Favorite_Books_Screenshot.png"/>
