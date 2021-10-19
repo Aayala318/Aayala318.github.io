@@ -1,32 +1,54 @@
 
-## This can be your internal website page / project page
+## Bright Ideas
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Project description:** This project was a group project that I worked on near the end of my Coding Dojo course. The website is basically a place where users can post any idea and it will be displayed on the main page. Users are allowed to like each others posts and delete any of their own. The registration process has all the proper validations and displays error messages if necessary.
 
-### 1. Suggest hypotheses about the causes of observed phenomena
+### Validations used for registration and login proccess.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+```python
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+class UserManager(models.Manager):
+    def validate(self, form):
+        errors = {}
+        if len(form['first_name']) < 2:
+            errors['first_name'] = 'First Name must be at least 2 characters'
 
-```javascript
-if (isAwesome){
-  return true
-}
+        if len(form['last_name']) < 2:
+            errors['last_name'] = 'Last Name must be at least 2 characters'
+
+        if len(form['alias']) < 2:
+            errors['alias'] = 'Alias must be at least 2 characters'
+
+        if not EMAIL_REGEX.match(form['email']):
+            errors['email'] = 'Invalid Email Address'
+        
+        email_check = self.filter(email=form['email'])
+        if email_check:
+            errors['email'] = "Email already in use"
+
+        if len(form['password']) < 8:
+            errors['password'] = 'Password must be at least 8 characters'
+        
+        if form['password'] != form['confirm']:
+            errors['password'] = 'Passwords do not match'
+        return errors
+
+    def authenticate(self, email, password):
+        users = self.filter(email=email)
+        if not users:
+            return False
+        user = users[0]
+        return bcrypt.checkpw(password.encode(), user.password.encode())
+        
+
+    def register(self, form):
+        pw = bcrypt.hashpw(form['password'].encode(), bcrypt.gensalt()).decode()
+        return self.create(
+            first_name = form['first_name'],
+            last_name = form['last_name'],
+            email = form['email'],
+            password = pw,
+        )
 ```
-
-### 2. Assess assumptions on which statistical inference will be based
-
-```javascript
-if (isAwesome){
-  return true
-}
-```
-
-### 3. Support the selection of appropriate statistical tools and techniques
-
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
-### 4. Provide a basis for further data collection through surveys or experiments
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
