@@ -1,6 +1,6 @@
 ## Favorite Books
 
-**Description:** This project was mainly focused on creating and experimenting with the navbar. This was one of my early attempts in creating a navber, it does not have much functionality but does have a logout button within it. The project allows users to add book titles along with the author, they can also favorite and unfavorite books. When a user adds a book, that book will automatically be added to their favorited list and be displayed on their main page. Books that are not favorited by the current user with be in a "Other Books" list.
+**Description:** This project was mainly focused on creating and experimenting with the navbar. This was one of my early attempts in creating a navbar, it even features a logout button! The project allows users to add book titles along with the author, they can also favorite and unfavorite books. When a user adds a book, that book will automatically be added to their favorited list and be displayed on their main page. Books that are not favorited by the current user with be in a "Other Books" list.
 
 ### My code for creating and styling the navbar.
 
